@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "dyablog"
+version = "0.1.0"
+description = ""
+authors = ["0xBA5E64 <26796481+0xBA5E64@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
