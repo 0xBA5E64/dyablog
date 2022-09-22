@@ -7,7 +7,20 @@ An inconsequential blog built on Django, vaguely following the instructions of a
 
 This project is mainly personal practice fo proper Python project management, making use of pyenv and Poetry following in the footsteps of my earlier, dependency-free, largely version-agnostic [`sudoku-solver`](https://github.com/0xBA5E64/Sudoku-Solver) project.
 
-## Requirements
-- [`pyenv`](https://github.com/pyenv/pyenv) Python version manager
-  - Python 3.10.7
-- [Poetry](https://python-poetry.org/) package & dependency manager
+## Dependencies*
+- [`pyenv`](https://github.com/pyenv/pyenv) - Python version manager
+  - Python `3.10.7` installed
+- [Poetry](https://python-poetry.org/) - Python Package and Dependency manager
+
+All remaining project dependencies are managed by Poetry, and are automatically installed through `poetry install` 
+
+## Getting Started
+Double-check you fullfill all dependencies, then;
+```sh
+$ pyenv install 3.10.7 # Install appropriate Python version.
+$ git clone https://github.com/0xBA5E64/dyablog # Clone repo
+$ cd dyablog # Enter project directory.
+$ poetry shell # Open shell in poetry's virtual enviroument.
+$ poetry install # Install python project dependencies.
+$ code . # Open project in vscode.
+```
