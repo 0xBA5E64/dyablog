@@ -12,7 +12,7 @@ This project is mainly personal practice fo proper Python project management, ma
   - Python `3.10.7` installed
 - [Poetry](https://python-poetry.org/) - Python Package and Dependency manager
 
-All remaining project dependencies are managed by Poetry, and are automatically installed through `poetry install` 
+\*All remaining project dependencies are managed by Poetry, and are automatically installed through `poetry install`.
 
 ## Getting Started
 Double-check you fullfill all dependencies, then;
