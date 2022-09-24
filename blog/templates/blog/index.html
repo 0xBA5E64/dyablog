@@ -1,0 +1,9 @@
+{% if data %}
+    <ul>
+        {% for post in data %}
+            <li><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No blogposts found</p>
+{% endif %}
