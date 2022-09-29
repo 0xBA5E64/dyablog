@@ -3,9 +3,11 @@
 # 👿 dyablog
 *[Django](https://www.djangoproject.com/) + Blog = `dyablog`*
 
-An inconsequential blog built on Django, vaguely following the instructions of a soon to be four year old [YouTube tutorial](https://youtu.be/F5mRW0jo-U4?t=11258).
+An inconsequential blog built on Django, vaguely following the instructions of ~~a soon to be four year old [YouTube tutorial](https://youtu.be/F5mRW0jo-U4?t=11258)~~ the official Django 4.1 [introduction/tutorial](https://docs.djangoproject.com/en/4.1/intro/).
 
-This project is mainly personal practice fo proper Python project management, making use of pyenv and Poetry following in the footsteps of my earlier, dependency-free, largely version-agnostic [`sudoku-solver`](https://github.com/0xBA5E64/Sudoku-Solver) project.
+This project is mainly personal practice fo proper Python project management with use of **`pyenv`** and **Poetry**, following the footsteps of my earlier, dependency-free, largely version-agnostic [`sudoku-solver`](https://github.com/0xBA5E64/Sudoku-Solver) project.
+
+See the ["wiki"](docs/wiki.md) document for additional project information and instructions.
 
 ## Dependencies*
 - [`pyenv`](https://github.com/pyenv/pyenv) - Python version manager
