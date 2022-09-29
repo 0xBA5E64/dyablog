@@ -1,3 +1,13 @@
-<h1>{{ data.title }}</h1>
-<h2> {{ data.author }} </h2>
-<p> {{ data.body }} </p>
+{% extends "./base.html" %}
+{% block content %}
+<div class="post">
+    <div class="post-header">
+        <h1>{{ data.title }}</h1>
+        <h2>Written By: <span>{{ data.author }}</span></h2>
+        <h3>Publiched on: <span>{{data.pub_date}}</span></h3>
+    </div>
+    <div class="post-body">
+        {{ data.body }}
+    </div>
+</div>
+{% endblock %}

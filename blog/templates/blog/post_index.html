@@ -1,4 +1,7 @@
-{% if data %}
+{% extends "./base.html" %}
+
+{% block content %}
+    {% if data %}
     <ul>
         {% for post in data %}
             <li><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a></li>
@@ -6,4 +9,5 @@
     </ul>
     {% else %}
     <p>No blogposts found</p>
-{% endif %}
+    {% endif %}
+{% endblock %}
