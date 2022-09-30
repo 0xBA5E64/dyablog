@@ -1,3 +1,167 @@
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+navbar {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 64px;
+    overflow: hidden;
+
+    box-sizing: border-box;
+    padding: 8px;
+    background: #EEE;
+    border-bottom: #AAA solid 1px;
+
+    display: flex;
+    justify-content: center;
+}
+
+navbar .inner {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+}
+
+navbar .navbar-entry {
+    position: relative;
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+
+    margin: 0 2px;
+    padding: 0 16px;
+    border-radius: 4px;
+    height: 80%;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar-entry:hover {
+    background: #0002;
+}
+
+.navbar-entry.title {
+    font-size: 1.5em;
+    padding: 8px 16px;
+    height: 100%;
+    font-weight: bold;
+    text-transform: none;
+    border: #0002 solid 1px;
+}
+
+navbar .separator {
+    width: 1px;
+    height: 50%;
+    margin: auto 8px;
+    background: #0008;
+}
+
+#content {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1200px;
+}
+
 .post-header {
-    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    padding: 8px 64px;
+    background: #EEE;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 0 0 16px 16px;
+}
+
+.post-header .author {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.post-header .title {
+    margin: 0;
+    font-size: 48px;
+    font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+}
+
+.post-header .pub-date {
+    font-weight: normal;
+}
+
+.post-body {
+    margin: 16px 8px;
+    padding: 32px 16px;
+    border: solid 1px #0002;
+    border-radius: 4px;
+}
+
+.post-entry {
+    position: relative;
+    display: block;
+    color: #222;
+    overflow: hidden;
+    margin: 16px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 16px 32px;
+    background: #0000;
+    border: solid 1px #0004;
+}
+
+.post-entry .title {
+    margin: 0;
+    font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+}
+
+.post-entry .author {
+    margin: 4px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+.post-entry .description {
+    margin: 8px 4px;
+    font-style: italic;
+    color: #444;
+}
+
+#footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#footer p {
+    color: #0008;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+#footer a {
+    color: inherit;
+    margin: 0 2px;
+}
+
+#footer span {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    background: #0002;
+    padding: 2px 6px;
+    margin: 0 4px;
+    border-radius: 2px;
 }

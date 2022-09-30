@@ -1,12 +1,20 @@
 {% extends "./base.html" %}
 
+{% block title %}
+Dyablog.
+{% endblock %}
+
 {% block content %}
     {% if data %}
-    <ul>
+    <div class="post-list">
         {% for post in data %}
-            <li><a href="{% url 'blog:post' post.id %}">{{ post.title }}</a></li>
+            <a class="post-entry" href="{% url 'blog:post' post.id %}">
+                <h2 class="author">{{ post.author }}</h2>
+                <h1 class="title">{{ post.title }}</h1>
+                <p class="description">{{ post.description }}</p>
+            </a>
         {% endfor %}
-    </ul>
+    </div>
     {% else %}
     <p>No blogposts found</p>
     {% endif %}
