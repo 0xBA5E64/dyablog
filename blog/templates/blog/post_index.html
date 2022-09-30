@@ -8,7 +8,7 @@ Dyablog.
     {% if data %}
     <div class="post-list">
         {% for post in data %}
-            <a class="post-entry" href="{% url 'blog:post' post.id %}">
+            <a class="post-entry" href="{% url 'blog:post' post.slug %}">
                 <h2 class="author">{{ post.author }}</h2>
                 <h1 class="title">{{ post.title }}</h1>
                 <p class="description">{{ post.description }}</p>

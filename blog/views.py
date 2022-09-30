@@ -6,8 +6,8 @@ from blog.models import BlogPost
 # Create your views here.
 
 def index(request):
-    return render(request, 'blog/post_index.html', {'data': BlogPost.objects.all()})
+    return render(request, 'blog/post_index.html', {'data': BlogPost.objects.order_by('-pub_date')})
 
-def post(request, blogpost_id):
-    selected_post = get_object_or_404(BlogPost, id=blogpost_id)
+def post(request, blogpost_slug):
+    selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
     return render(request, 'blog/view_post.html', {'data': selected_post})

@@ -8,6 +8,7 @@ class BlogPost(models.Model):
     description = models.CharField("Blogpost Description", max_length=240, blank=True)
     pub_date = models.DateTimeField('Publication Date')
     body = models.TextField('Blogpost body')
+    slug = models.SlugField('Blogpost Slug', null=False, unique=True)
 
     def __str__(self):
         return self.title
