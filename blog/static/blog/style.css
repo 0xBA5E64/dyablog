@@ -29,6 +29,7 @@ navbar {
 }
 
 navbar .inner {
+    position: relative;
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -63,6 +64,11 @@ navbar .navbar-entry {
     font-weight: bold;
     text-transform: none;
     border: #0002 solid 1px;
+}
+
+.navbar-entry.user {
+    position: absolute;
+    right: 0;
 }
 
 navbar .separator {

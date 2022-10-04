@@ -24,6 +24,7 @@
             <a class="navbar-entry title" href="/">Dyablog.</a>
             <div class="separator"></div>
             <a class="navbar-entry" href="{% url 'blog:index' %}">Posts</a>
+            <a class="navbar-entry user" href="{% url 'blog:login' %}">{{ user }}</a>
         </div>
     </navbar>
 
