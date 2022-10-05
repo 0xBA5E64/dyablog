@@ -13,6 +13,11 @@ urlpatterns = [
       ),
     name='login'
   ),
+  path('logout/', auth_views.LogoutView.as_view(
+      next_page='blog:index'
+    ),
+    name="logout"
+  ),
   path('<slug:blogpost_slug>/', views.post, name='post'),
   path('<slug:blogpost_slug>/edit/', views.edit_post, name='edit-post')
 ]

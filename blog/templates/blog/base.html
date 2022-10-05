@@ -24,7 +24,14 @@
             <a class="navbar-entry title" href="/">Dyablog.</a>
             <div class="separator"></div>
             <a class="navbar-entry" href="{% url 'blog:index' %}">Posts</a>
-            <a class="navbar-entry user" href="{% url 'blog:login' %}">{{ user }}</a>
+            <div class="navbar-login">
+                {% if user.is_authenticated %}
+                <p class="username">{{ user }}</p>
+                <a class="navbar-entry logout" href="{% url 'blog:logout' %}">Log out</a>
+                {% else %}
+                <a class="navbar-entry login" href="{% url 'blog:login' %}">Login</a>
+                {% endif %}
+            </div>
         </div>
     </navbar>
 

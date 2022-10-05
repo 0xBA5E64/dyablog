@@ -44,7 +44,7 @@ navbar .navbar-entry {
     text-transform: uppercase;
     font-size: 14px;
 
-    margin: 0 2px;
+    margin: 0 8px;
     padding: 0 16px;
     border-radius: 4px;
     height: 80%;
@@ -66,15 +66,29 @@ navbar .navbar-entry {
     border: #0002 solid 1px;
 }
 
-.navbar-entry.user {
+.navbar-login {
     position: absolute;
     right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-login .username {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: #444;
+    background: #0001;
+    border: solid #AAA 1px;
+    border-radius: 4px;
+    padding: 4px 12px;
 }
 
 navbar .separator {
     width: 1px;
     height: 50%;
-    margin: auto 8px;
+    margin: auto 4px;
     background: #0008;
 }
 
