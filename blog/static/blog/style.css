@@ -179,6 +179,21 @@ navbar .separator {
     color: #444;
 }
 
+.post-entry .edit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 16px;
+    padding: 8px 12px;
+    background: #0001;
+    border-radius: 4px;
+    color: #222;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
 #footer {
     width: 100%;
     display: flex;

@@ -12,6 +12,9 @@ Dyablog.
                 <h2 class="author">{{ post.author }}</h2>
                 <h1 class="title">{{ post.title }}</h1>
                 <p class="description">{{ post.description }}</p>
+                {% if user.is_authenticated %}
+                <p class="edit" onclick="window.location='{% url 'blog:post' post.slug %}edit'">Edit Post</p>
+                {% endif %}
             </a>
         {% endfor %}
     </div>
