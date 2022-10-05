@@ -12,4 +12,4 @@ def index(request):
 
 def post(request, blogpost_slug):
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
-    return render(request, 'blog/view_post.html', {'data': selected_post})
+    return render(request, 'blog/view_post.html', {'post': selected_post})

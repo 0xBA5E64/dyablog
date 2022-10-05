@@ -1,18 +1,18 @@
 {% extends "./base.html" %}
 
 {% block title %}
-{{ data.title }} - Dyablog.
+{{ post.title }} - Dyablog.
 {% endblock %}
 
 {% block content %}
 <div class="post">
     <div class="post-header">
-        <h2 class="author">{{ data.author }}</h2>
-        <h1 class="title">{{ data.title }}</h1>
-        <h3 class="pub-date">Published on: <span>{{data.pub_date.date}}</span></h3>
+        <h2 class="author">{{ post.author }}</h2>
+        <h1 class="title">{{ post.title }}</h1>
+        <h3 class="pub-date">Published on: <span>{{post.pub_date.date}}</span></h3>
     </div>
     <div class="post-body">
-        {{ data.body }}
+        {{ post.body }}
     </div>
 </div>
 {% endblock %}
