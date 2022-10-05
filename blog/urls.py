@@ -13,5 +13,6 @@ urlpatterns = [
       ),
     name='login'
   ),
-  path('<slug:blogpost_slug>/', views.post, name='post')
+  path('<slug:blogpost_slug>/', views.post, name='post'),
+  path('<slug:blogpost_slug>/edit/', views.edit_post, name='edit-post')
 ]

@@ -85,6 +85,7 @@ navbar .separator {
 }
 
 .post-header {
+    position: relative;
     padding: 8px 64px;
     background: #EEE;
     overflow: hidden;
@@ -105,6 +106,25 @@ navbar .separator {
 
 .post-header .pub-date {
     font-weight: normal;
+}
+
+.post-header .edit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 16px;
+    padding: 8px 12px;
+    background: #0001;
+    border-radius: 4px;
+    color: #222;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.post-header .edit:hover {
+    background: #0002;
 }
 
 .post-body {
