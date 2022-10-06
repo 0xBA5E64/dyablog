@@ -11,7 +11,7 @@ body {
     font-family: 'Roboto', Helvetica, sans-serif;
 }
 
-navbar {
+nav {
     position: sticky;
     top: 0px;
     left: 0px;
@@ -28,7 +28,7 @@ navbar {
     justify-content: center;
 }
 
-navbar .inner {
+nav .inner {
     position: relative;
     width: 100%;
     max-width: 1200px;
@@ -36,7 +36,7 @@ navbar .inner {
     align-items: center;
 }
 
-navbar .navbar-entry {
+nav .navbar-entry {
     position: relative;
     color: #222;
     text-decoration: none;
@@ -85,7 +85,7 @@ navbar .navbar-entry {
     padding: 4px 12px;
 }
 
-navbar .separator {
+nav .separator {
     width: 1px;
     height: 50%;
     margin: auto 4px;
