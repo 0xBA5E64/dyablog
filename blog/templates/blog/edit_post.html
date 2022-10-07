@@ -5,12 +5,7 @@ Editing "{{post.title}}"
 
 <form method="post">
     {% csrf_token %}
-    <input name="title" type="text" placeholder="Post Title" value="{{ post.title }}">
-    <input name="author" type="text" placeholder="Post Author" value="{{ post.author }}">
-    <input type="date" value="{{ post.pub_date.date.isoformat }}">
-    <input type="time" value="{{ post.pub_date.time.isoformat }}">
-    <input name="description" type="text" placeholder="Post Title" value="{{ post.description }}">
-    <textarea name="body" type="text" placeholder="Post Body">{{ post.body }}</textarea>
+    {{ form }}
     <button type="submit">Save</button>
 </form>
 
