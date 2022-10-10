@@ -93,6 +93,7 @@ nav .separator {
 }
 
 #content {
+    position: relative;
     margin: 0 auto;
     width: 95%;
     max-width: 1200px;
@@ -148,12 +149,29 @@ nav .separator {
     border-radius: 4px;
 }
 
+.new-post {
+    display: inline-block;
+    margin: 16px;
+    padding: 8px 12px;
+    background: #0001;
+    border-radius: 4px;
+    color: #222;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.post-list {
+    position: relative;;
+}
+
 .post-entry {
     position: relative;
     display: block;
     color: #222;
     overflow: hidden;
-    margin: 16px 0;
+    margin: 16px;
     border-radius: 8px;
     text-decoration: none;
     padding: 16px 32px;

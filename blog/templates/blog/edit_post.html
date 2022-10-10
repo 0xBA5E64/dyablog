@@ -1,7 +1,10 @@
 {% extends "./base.html" %}
 
 {% block content %}
+
+{% if post %}
 Editing "{{post.title}}"
+{% endif %}
 
 <form method="post">
     {% csrf_token %}

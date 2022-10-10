@@ -18,6 +18,7 @@ urlpatterns = [
     ),
     name="logout"
   ),
+  path('new-post/', views.new_post, name="new-post"),
   path('<slug:blogpost_slug>/', views.post, name='post'),
   path('<slug:blogpost_slug>/edit/', views.edit_post, name='edit-post')
 ]
