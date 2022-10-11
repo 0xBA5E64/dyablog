@@ -5,9 +5,6 @@ Dyablog.
 {% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
-    <a class="new-post" href="{% url 'blog:new-post' %}">New Post</a>
-    {% endif %}
     {% if data %}
     <div class="post-list">
         {% for post in data %}

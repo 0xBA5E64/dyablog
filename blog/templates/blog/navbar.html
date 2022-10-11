@@ -6,6 +6,7 @@
         <div class="navbar-login">
             {% if user.is_authenticated %}
             <p class="username">{{ user }}</p>
+            <a class="navbar-entry new-post" href="{% url 'blog:new-post' %}">New Post</a>
             <a class="navbar-entry logout" href="{% url 'blog:logout' %}">Log out</a>
             {% else %}
             <a class="navbar-entry login" href="{% url 'blog:login' %}">Login</a>
