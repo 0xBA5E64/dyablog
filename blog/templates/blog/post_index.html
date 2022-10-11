@@ -9,7 +9,13 @@ Dyablog.
     <div class="post-list">
         {% for post in data %}
             <a class="post-entry" href="{% url 'blog:post' post.slug %}">
-                <h2 class="author">{{ post.author }}</h2>
+                <h2 class="author">
+                    {% if post.author.first_name %}
+                    {{ post.author.first_name }} {{post.author.last_name}}
+                    {% else %}
+                    {{ post.author.username }}
+                    {% endif %}
+                </h2>
                 <h1 class="title">{{ post.title }}</h1>
                 <p class="description">{{ post.description }}</p>
                 {% if perms.blog.change_blogpost %}

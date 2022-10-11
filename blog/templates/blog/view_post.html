@@ -7,7 +7,13 @@
 {% block content %}
 <div class="post">
     <div class="post-header">
-        <h2 class="author">{{ post.author }}</h2>
+        <h2 class="author">
+            {% if post.author.first_name %}
+            {{ post.author.first_name }} {{post.author.last_name}}
+            {% else %}
+            {{ post.author.username }}
+            {% endif %}
+        </h2>
         <h1 class="title">{{ post.title }}</h1>
         <h3 class="pub-date">Published on: <span>{{post.pub_date.date}}</span></h3>
         {% if perms.blog.change_blogpost %}

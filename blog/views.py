@@ -26,6 +26,7 @@ def new_post(request):
                 slug_suffix += 1
                 potential_slug = slugify(f"{form.cleaned_data['title']} {slug_suffix}")       
             new_post.slug = potential_slug
+            new_post.author = request.user
             new_post.save()
 
             return redirect('blog:post', blogpost_slug=new_post.slug)
