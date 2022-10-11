@@ -3,12 +3,28 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
+from django.utils.text import slugify
 
+def author_string_to_users(apps, schema_editor):
+    if schema_editor.connection.alias != 'default':
+        return
+    posts = apps.get_model('blog', 'BlogPost')
+    users = apps.get_model('auth', 'User')
+    for post in posts.objects.all():
+        post._author = users.objects.get_or_create(
+            username=slugify(post.author),
+            first_name=post.author.split(" ")[0],
+            last_name=" ".join(post.author.split(" ")[1:])
+        )[0]
+        post.save()
 
-# Functions from the following migrations need manual copying.
-# Move them and any dependencies into this file, then update the
-# RunPython operations to refer to the local versions:
-# blog.migrations.0003_auto_20221011_1931
+def revert_author_string_to_users(apps, schema_editor):
+    if schema_editor.connection.alias != 'default':
+        return
+    posts = apps.get_model('blog', 'BlogPost').objects.all()
+    for post in posts:
+        post.author = f"{post._author.first_name} {post._author.last_name}".strip()
+        post._author.delete()
 
 class Migration(migrations.Migration):
 
@@ -35,8 +51,8 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.RunPython(
-            code=blog.migrations.0003_auto_20221011_1931.forwards,
-            reverse_code=blog.migrations.0003_auto_20221011_1931.revert,
+            code=author_string_to_users,
+            reverse_code=revert_author_string_to_users,
         ),
         migrations.RemoveField(
             model_name='blogpost',
