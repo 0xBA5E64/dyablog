@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.text import slugify
 from django.contrib.auth.decorators import login_required
-from blog.models import BlogPost
+from .models import BlogPost
 from .forms import BlogForm
 
 # Create your views here.
@@ -19,8 +19,15 @@ def new_post(request):
         form = BlogForm(request.POST)
         if form.is_valid():
             new_post = form.save(commit=False)
-            new_post.slug = slugify(form.cleaned_data['title'])
-            new_post.save()
+
+            potential_slug = slugify(form.cleaned_data['title'])
+            slug_suffix = 0
+            while BlogPost.objects.filter(slug=potential_slug).count():
+                slug_suffix += 1
+                potential_slug = slugify(f"{form.cleaned_data['title']} {slug_suffix}")       
+            new_post.slug = potential_slug
+            new_post.save(commit=True)
+
             return redirect('blog:post', blogpost_slug=new_post.slug)
         else:
             return render(request, 'blog/edit_post.html', {'form': form})
