@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.text import slugify
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
 from .models import BlogPost
 from .forms import BlogForm
 
@@ -13,7 +13,7 @@ def post(request, blogpost_slug):
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
     return render(request, 'blog/view_post.html', {'post': selected_post})
 
-@login_required(login_url="blog:login")
+@permission_required('blog.add_blogpost',login_url="blog:login")
 def new_post(request):
     if request.method == "POST":
         form = BlogForm(request.POST)
@@ -35,7 +35,7 @@ def new_post(request):
         form = BlogForm()
         return render(request, 'blog/edit_post.html', {'form': form})
 
-@login_required(login_url="blog:login")
+@permission_required('blog.change_blogpost',login_url="blog:login")
 def edit_post(request, blogpost_slug):
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
 

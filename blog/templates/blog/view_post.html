@@ -10,7 +10,7 @@
         <h2 class="author">{{ post.author }}</h2>
         <h1 class="title">{{ post.title }}</h1>
         <h3 class="pub-date">Published on: <span>{{post.pub_date.date}}</span></h3>
-        {% if user.is_authenticated %}
+        {% if perms.blog.change_blogpost %}
         <a class="edit" href="edit">Edit Post</a>
         {% endif %}
     </div>
