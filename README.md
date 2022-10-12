@@ -3,9 +3,10 @@
 # 👿 dyablog
 *[Django](https://www.djangoproject.com/) + Blog = `dyablog`*
 
-An inconsequential blog built on Django, vaguely following the instructions of ~~a soon to be four year old [YouTube tutorial](https://youtu.be/F5mRW0jo-U4?t=11258)~~ the official Django 4.1 [introduction/tutorial](https://docs.djangoproject.com/en/4.1/intro/).
+An inconsequential blog built on Django, vaguely following the instructions of ~~a soon-to-be four-year-old [YouTube tutorial](https://youtu.be/F5mRW0jo-U4?t=11258)~~ the official Django 4.1 [introduction/tutorial](https://docs.djangoproject.com/en/4.1/intro/).
 
-This project is mainly personal practice fo proper Python project management with use of **`pyenv`** and **Poetry**, following the footsteps of my earlier, dependency-free, largely version-agnostic [`sudoku-solver`](https://github.com/0xBA5E64/Sudoku-Solver) project.
+This project is mainly a personal exercise in proper python project management as outlined in [Alex Mitelman](https://twitter.com/alex_mitelman)'s article ["Python Best Practices for a New Project in 2021"](https://mitelman.engineering/blog/python-best-practice/automating-python-best-practices-for-a-new-project/) through the use of tools such as **`pyenv`** and **Poetry**.
+*(this is in contrast to my earlier dependency-free, largely version-agnostic [`sudoku-solver`](https://github.com/0xBA5E64/Sudoku-Solver) project)*
 
 See the ["wiki"](docs/wiki.md) document for additional project information and instructions.
 
@@ -17,7 +18,7 @@ See the ["wiki"](docs/wiki.md) document for additional project information and i
 \*All remaining project dependencies are managed by Poetry, and are automatically installed through `poetry install`.
 
 ## Getting Started
-Double-check you fullfill all dependencies, then;
+Double-check you fulfill all dependencies, then;
 ```sh
 $ pyenv install 3.10.7 # Install appropriate Python version.
 $ git clone https://github.com/0xBA5E64/dyablog # Clone repo
