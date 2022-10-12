@@ -1,5 +1,7 @@
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.text import slugify
+from django.utils.safestring import SafeText
 from django.contrib.auth.decorators import permission_required
 from .models import BlogPost
 from .forms import BlogForm
@@ -7,7 +9,7 @@ from .forms import BlogForm
 # Create your views here.
 
 
-def index(request):
+def index(request: HttpRequest) -> HttpResponse:
     return render(
         request,
         "blog/post_index.html",
@@ -15,13 +17,13 @@ def index(request):
     )
 
 
-def post(request, blogpost_slug):
+def post(request: HttpRequest, blogpost_slug: SafeText) -> HttpResponse:
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
     return render(request, "blog/view_post.html", {"post": selected_post})
 
 
 @permission_required("blog.add_blogpost", login_url="blog:login")
-def new_post(request):
+def new_post(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = BlogForm(request.POST)
         if form.is_valid():
@@ -47,7 +49,7 @@ def new_post(request):
 
 
 @permission_required("blog.change_blogpost", login_url="blog:login")
-def edit_post(request, blogpost_slug):
+def edit_post(request: HttpResponse, blogpost_slug: SafeText) -> HttpResponse:
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
 
     if request.method == "POST":

@@ -2,11 +2,15 @@
 
 from django.conf import settings
 from django.db import migrations, models
+from django.db.backends.base.schema import BaseDatabaseSchemaEditor
 import django.db.models.deletion
+from django.apps.registry import Apps
 from django.utils.text import slugify
 
 
-def author_string_to_users(apps, schema_editor):
+def author_string_to_users(
+    apps: Apps, schema_editor: BaseDatabaseSchemaEditor
+) -> None:
     if schema_editor.connection.alias != "default":
         return
     posts = apps.get_model("blog", "BlogPost")
@@ -20,7 +24,9 @@ def author_string_to_users(apps, schema_editor):
         post.save()
 
 
-def revert_author_string_to_users(apps, schema_editor):
+def revert_author_string_to_users(
+    apps: Apps, schema_editor: BaseDatabaseSchemaEditor
+) -> None:
     if schema_editor.connection.alias != "default":
         return
     posts = apps.get_model("blog", "BlogPost").objects.all()

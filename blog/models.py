@@ -14,5 +14,5 @@ class BlogPost(models.Model):
     body = models.TextField("Blogpost body")
     slug = models.SlugField("Blogpost Slug", null=False, unique=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title
