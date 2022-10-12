@@ -13,14 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from http.client import HTTPResponse
+
 from django.contrib import admin
 from django.urls import include, path
 from django.shortcuts import redirect
+from django.http import HttpRequest, HttpResponseRedirect
 
 
-def redirect_to_blog() -> HTTPResponse:
-    return redirect("blog:index")
+def redirect_to_blog(request: HttpRequest) -> (HttpResponseRedirect):
+    return redirect("blog:index", permanent=False)
 
 
 urlpatterns = [
