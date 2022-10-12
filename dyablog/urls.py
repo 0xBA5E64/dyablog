@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import include, path
 from django.shortcuts import redirect
 
+
 def redirect_to_blog(request):
-    return redirect('blog:index')
+    return redirect("blog:index")
+
 
 urlpatterns = [
-    path('', redirect_to_blog),
-    path('blog/', include('blog.urls')),
-    path('admin/', admin.site.urls),
+    path("", redirect_to_blog),
+    path("blog/", include("blog.urls")),
+    path("admin/", admin.site.urls),
 ]
