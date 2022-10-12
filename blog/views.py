@@ -24,7 +24,7 @@ def new_post(request):
             slug_suffix = 0
             while BlogPost.objects.filter(slug=potential_slug).count():
                 slug_suffix += 1
-                potential_slug = slugify(f"{form.cleaned_data['title']} {slug_suffix}")       
+                potential_slug = slugify(f"{form.cleaned_data['title']} {slug_suffix}")
             new_post.slug = potential_slug
             new_post.author = request.user
             new_post.save()

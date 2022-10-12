@@ -1,7 +1,7 @@
 # Reproducing the base project enviroument
 The following instuctions are to be followed if for whatever reason one wishes to reproduce the initial project enviroument, such as for use as a future template.
 
-> ⚠️ fair **Warning**: This process has only been run on Linux, and, as such, I make no claims this is sure to work on any other platform. 
+> ⚠️ fair **Warning**: This process has only been run on Linux, and, as such, I make no claims this is sure to work on any other platform.
 
 ## Prerequisites
  - [`git`](https://git-scm.com/) - Version control & project manager
