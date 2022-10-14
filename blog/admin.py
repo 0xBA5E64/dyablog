@@ -5,7 +5,7 @@ from django.contrib import admin
 from blog.models import BlogPost
 
 
-class AdminBlogPost(admin.ModelAdmin):
+class AdminBlogPost(admin.ModelAdmin[BlogPost]):
     prepopulated_fields = {"slug": ("title",)}
 
 

@@ -1,4 +1,5 @@
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest
+from django.http.response import HttpResponseBase
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.text import slugify
 from django.utils.safestring import SafeText
@@ -9,7 +10,7 @@ from .forms import BlogForm
 # Create your views here.
 
 
-def index(request: HttpRequest) -> HttpResponse:
+def index(request: HttpRequest) -> HttpResponseBase:
     return render(
         request,
         "blog/post_index.html",
@@ -17,13 +18,13 @@ def index(request: HttpRequest) -> HttpResponse:
     )
 
 
-def post(request: HttpRequest, blogpost_slug: SafeText) -> HttpResponse:
+def post(request: HttpRequest, blogpost_slug: SafeText) -> HttpResponseBase:
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
     return render(request, "blog/view_post.html", {"post": selected_post})
 
 
-@permission_required("blog.add_blogpost", login_url="blog:login")
-def new_post(request: HttpRequest) -> HttpResponse:
+@permission_required("blog.add_blogpost")
+def new_post(request: HttpRequest) -> HttpResponseBase:
     if request.method == "POST":
         form = BlogForm(request.POST)
         if form.is_valid():
@@ -43,13 +44,15 @@ def new_post(request: HttpRequest) -> HttpResponse:
             return redirect("blog:post", blogpost_slug=new_post.slug)
         else:
             return render(request, "blog/edit_post.html", {"form": form})
-    elif request.method == "GET":
+    else:
         form = BlogForm()
         return render(request, "blog/edit_post.html", {"form": form})
 
 
-@permission_required("blog.change_blogpost", login_url="blog:login")
-def edit_post(request: HttpResponse, blogpost_slug: SafeText) -> HttpResponse:
+@permission_required("blog.change_blogpost")
+def edit_post(
+    request: HttpRequest, blogpost_slug: SafeText
+) -> HttpResponseBase:
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
 
     if request.method == "POST":
@@ -57,9 +60,8 @@ def edit_post(request: HttpResponse, blogpost_slug: SafeText) -> HttpResponse:
         if form.is_valid():
             form.save()
         return redirect("blog:post", blogpost_slug=selected_post.slug)
-    elif request.method == "GET":
+    else:
         form = BlogForm(instance=selected_post)
-        form
         return render(
             request,
             "blog/edit_post.html",

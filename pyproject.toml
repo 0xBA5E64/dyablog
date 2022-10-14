@@ -15,6 +15,7 @@ pre-commit = "^2.20.0"
 flake8 = "^5.0.4"
 black = {version = "^22.10.0", allow-prereleases = true}
 mypy = "^0.982"
+django-stubs = "^1.12.0"
 
 [tool.black]
 line-length = 79
@@ -50,6 +51,10 @@ check_untyped_defs = true
 no_implicit_reexport = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "dyablog.settings"
 
 [build-system]
 requires = ["poetry-core"]
