@@ -16,3 +16,20 @@ class BlogPost(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class CommentPost(models.Model):
+    parent_post = models.ForeignKey(
+        BlogPost, on_delete=models.CASCADE, related_name="comments"
+    )
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="comments"
+    )
+    timestamp = models.DateTimeField("Time of Comment")
+    body = models.TextField("Body of Comment", max_length=800)
+
+    class Meta:
+        ordering = ["-timestamp"]
+
+    def __str__(self) -> str:
+        return f"Comment by {self.author.username} on {self.parent_post.slug}"

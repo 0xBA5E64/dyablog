@@ -226,6 +226,35 @@ nav .separator {
     text-decoration: none;
 }
 
+.post-comments .comment {
+    background: #0001;
+    padding: 8px 24px;
+    margin: 8px 0;
+    border-radius: 4px;
+}
+
+.comment p.author {
+    font-weight: bold;
+}
+
+.comment p.author span.username {
+    display: inline-block;
+    background: #444;
+    border-radius: 4px;
+    padding: 0.1em 0.5em;
+
+    color: #DDD;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.comment p.author span.time-date {
+    color: #888;
+    font-weight: normal;
+    text-transform: none;
+}
+
 #footer {
     width: 100%;
     display: flex;

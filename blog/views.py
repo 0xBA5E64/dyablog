@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.contrib.auth.decorators import permission_required
 from django.http import HttpRequest
 from django.http.response import HttpResponseBase
@@ -5,7 +7,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.safestring import SafeText
 from django.utils.text import slugify
 
-from .forms import BlogForm
+from .forms import BlogForm, CommentForm
 from .models import BlogPost
 
 # Create your views here.
@@ -20,6 +22,21 @@ def index(request: HttpRequest) -> HttpResponseBase:
 
 
 def post(request: HttpRequest, blogpost_slug: SafeText) -> HttpResponseBase:
+    if request.method == "POST" and request.user.has_perm(
+        "blog.add_commentpost"
+    ):
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            new_comment = form.save(commit=False)
+
+            new_comment.parent_post = get_object_or_404(
+                BlogPost, slug=blogpost_slug
+            )
+            new_comment.author = request.user
+            new_comment.timestamp = datetime.now()
+            new_comment.save()
+
+            return redirect("blog:post", blogpost_slug=blogpost_slug)
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
     return render(request, "blog/view_post.html", {"post": selected_post})
 
