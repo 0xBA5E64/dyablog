@@ -15,9 +15,9 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import include, path
-from django.shortcuts import redirect
 from django.http import HttpRequest, HttpResponseRedirect
+from django.shortcuts import redirect
+from django.urls import include, path
 
 
 def redirect_to_blog(request: HttpRequest) -> (HttpResponseRedirect):

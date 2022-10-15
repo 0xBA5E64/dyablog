@@ -1,11 +1,12 @@
+from django.contrib.auth.decorators import permission_required
 from django.http import HttpRequest
 from django.http.response import HttpResponseBase
-from django.shortcuts import render, get_object_or_404, redirect
-from django.utils.text import slugify
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.safestring import SafeText
-from django.contrib.auth.decorators import permission_required
-from .models import BlogPost
+from django.utils.text import slugify
+
 from .forms import BlogForm
+from .models import BlogPost
 
 # Create your views here.
 

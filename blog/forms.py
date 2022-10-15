@@ -1,6 +1,8 @@
-from django import forms
-from blog.models import BlogPost
 from typing import Any
+
+from django import forms
+
+from blog.models import BlogPost
 
 
 class BlogForm(forms.ModelForm[Any]):
