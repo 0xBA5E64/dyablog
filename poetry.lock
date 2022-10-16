@@ -83,6 +83,14 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-editorjs-fields"
+version = "0.2.7"
+description = "Django plugin for using Editor.js"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[[package]]
 name = "django-stubs"
 version = "1.12.0"
 description = "Mypy stubs for Django"
@@ -344,7 +352,7 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c68f8ce666834bb9c9388ba404ecc0a251f7dcaac779a7e471401c26ea44540f"
+content-hash = "a289b87b17515f3d38e08107d492583c876b252f2b354fde3f53e902f6f4ab19"
 
 [metadata.files]
 asgiref = [
@@ -393,6 +401,10 @@ distlib = [
 Django = [
     {file = "Django-4.1.1-py3-none-any.whl", hash = "sha256:acb21fac9275f9972d81c7caf5761a89ec3ea25fe74545dd26b8a48cb3a0203e"},
     {file = "Django-4.1.1.tar.gz", hash = "sha256:a153ffd5143bf26a877bfae2f4ec736ebd8924a46600ca089ad96b54a1d4e28e"},
+]
+django-editorjs-fields = [
+    {file = "django-editorjs-fields-0.2.7.tar.gz", hash = "sha256:f31d8db403c2a0b0e8a24b320c826a76861b92853f8a911695114dc74344e8aa"},
+    {file = "django_editorjs_fields-0.2.7-py3-none-any.whl", hash = "sha256:2f3f139330ec1a024ed15ad9bd00deb123141eeabca7a3dd4ab8bbb1756ba991"},
 ]
 django-stubs = [
     {file = "django-stubs-1.12.0.tar.gz", hash = "sha256:ea8b35d0da49f7b2ee99a79125f1943e033431dd114726d6643cc35de619230e"},

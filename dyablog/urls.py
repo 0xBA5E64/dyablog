@@ -14,10 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.http import HttpRequest, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import include, path
+
+from . import settings
 
 
 def redirect_to_blog(request: HttpRequest) -> (HttpResponseRedirect):
@@ -28,4 +31,5 @@ urlpatterns = [
     path("", redirect_to_blog),
     path("blog/", include("blog.urls")),
     path("admin/", admin.site.urls),
-]
+    path("editorjs/", include("django_editorjs_fields.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

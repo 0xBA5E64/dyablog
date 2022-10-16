@@ -25,6 +25,7 @@ $ git clone https://github.com/0xBA5E64/dyablog # Clone repo
 $ cd dyablog # Enter project directory.
 $ poetry shell # Open shell in poetry's virtual enviroument.
 $ poetry install # Install python project dependencies.
+$ python ./manage.py collectstatic # populate project static files
 $ python ./manage.py runserver # start the development server
 $ code . # Open project in vscode.
 ```

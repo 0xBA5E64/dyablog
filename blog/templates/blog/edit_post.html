@@ -8,7 +8,8 @@ Editing "{{post.title}}"
 
 <form method="post">
     {% csrf_token %}
-    {{ form }}
+    {{ form.media }}
+    {{ form.as_p }}
     <button type="submit">Save</button>
 </form>
 

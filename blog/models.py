@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django_editorjs_fields import EditorJsJSONField
 
 # Create your models here.
 
@@ -10,8 +11,18 @@ class BlogPost(models.Model):
     description = models.CharField(
         "Blogpost Description", max_length=240, blank=True
     )
+    body = EditorJsJSONField(
+        plugins=[
+            "@editorjs/image",
+            "@editorjs/header",
+            "editorjs-github-gist-plugin",
+            "@editorjs/code@2.6.0",  # version allowed :)
+            "@editorjs/list@latest",
+            "@editorjs/inline-code",
+            "@editorjs/table",
+        ]
+    )
     pub_date = models.DateTimeField("Publication Date")
-    body = models.TextField("Blogpost body")
     slug = models.SlugField("Blogpost Slug", null=False, unique=True)
 
     def __str__(self) -> str:

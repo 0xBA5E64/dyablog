@@ -21,7 +21,8 @@
         {% endif %}
     </div>
     <div class="post-body">
-        {{ post.body }}
+        {% load editorjs %}
+        {{ post.body|editorjs}}
     </div>
     <div class="post-comments">
         <h2>Comments:</h2>
