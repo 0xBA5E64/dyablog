@@ -26,6 +26,7 @@ $ cd dyablog # Enter project directory.
 $ poetry shell # Open shell in poetry's virtual enviroument.
 $ poetry install # Install python project dependencies.
 $ python ./manage.py collectstatic # populate project static files
+$ tailwind -c ./blog/tailwind.config.js -i ./blog/static/blog/style.css -o ./blog/static/blog/tailwind.css -w # generate tailwind css
 $ python ./manage.py runserver # start the development server
 $ code . # Open project in vscode.
 ```
