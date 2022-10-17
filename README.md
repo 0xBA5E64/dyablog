@@ -15,7 +15,7 @@ See the ["wiki"](docs/wiki.md) document for additional project information and i
   - Python `3.10.7` installed
 - [Poetry](https://python-poetry.org/) - Python Package and Dependency manager
 - [TailwindCSS](https://tailwindcss.com/docs/installation) [CLI](https://tailwindcss.com/docs/installation) tool.
-  - Available through npm: `npm install -D tailwindcss`
+  - Available through npm: `npm install -D tailwindcss @tailwindcss/typography`
   - or [Standalone](https://tailwindcss.com/blog/standalone-cli)
 
 \*All remaining project dependencies are managed by Poetry, and are automatically installed through `poetry install`.
