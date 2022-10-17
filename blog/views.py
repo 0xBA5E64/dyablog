@@ -57,6 +57,7 @@ def new_post(request: HttpRequest) -> HttpResponseBase:
                 )
             new_post.slug = potential_slug
             new_post.author = request.user
+            new_post.pub_date = datetime.now()
             new_post.save()
 
             return redirect("blog:post", blogpost_slug=new_post.slug)

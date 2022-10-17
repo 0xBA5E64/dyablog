@@ -4,9 +4,12 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['Roboto', 'arial'],
-      'serif': ['"Roboto Serif"', '"Times New Roman"'],
+      'serif': ['"Roboto Slab"', '"Times New Roman"'],
       'mono': ['"Roboto Mono"', "monospace"],
       'display': ['Inter', 'Roboto', 'Arial']
+    },
+    transitionProperty: {
+      'movinglabel': 'top, left, right, bottom font-size, font-weight',
     },
     extend: {},
   },

@@ -20,7 +20,7 @@
         <a class="edit" href="edit">Edit Post</a>
         {% endif %}
     </div>
-    <div class="post-body prose">
+    <div class="prose m-4 w-full">
         {% load editorjs %}
         {{ post.body|editorjs}}
     </div>

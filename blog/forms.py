@@ -8,8 +8,7 @@ from blog.models import BlogPost, CommentPost
 class BlogForm(forms.ModelForm[Any]):
     class Meta:
         model = BlogPost
-        fields = ["title", "author", "description", "pub_date", "body"]
-        exclude = ["slug", "author"]
+        fields = ["title", "description", "body"]
 
 
 class CommentForm(forms.ModelForm[Any]):

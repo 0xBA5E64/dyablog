@@ -54,13 +54,6 @@
     background: #0002;
 }
 
-.post-body {
-    margin: 16px 8px;
-    padding: 32px 16px;
-    border: solid 1px #0002;
-    border-radius: 4px;
-}
-
 .new-post {
     display: inline-block;
     margin: 16px;
@@ -125,12 +118,6 @@
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-}
-
-textarea, input {
-    border: solid 1px #888;
-    padding: 0;
-    margin: 2px;
 }
 
 button {
