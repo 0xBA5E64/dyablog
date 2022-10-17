@@ -12,7 +12,11 @@ repos:
     rev: v0.982
     hooks:
         - id: mypy
-          additional_dependencies: [django-stubs, django_editorjs_fields]
+          additional_dependencies: [
+            django-stubs,
+            django_editorjs_fields,
+            django_browser_reload
+        ]
 -   repo: https://github.com/PyCQA/isort
     rev: 5.4.2
     hooks:

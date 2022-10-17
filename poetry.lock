@@ -83,6 +83,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-browser-reload"
+version = "1.6.0"
+description = "Automatically reload your browser in development."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "django-editorjs-fields"
 version = "0.2.7"
 description = "Django plugin for using Editor.js"
@@ -367,7 +378,7 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "4604231f91ee4764d7f7560ac378c78049ab0761faf4f04a2761599df54979d7"
+content-hash = "e5e75606c2ec758c977712c1b16fca5803b6a2c94b1bb29a53382da590bd1cab"
 
 [metadata.files]
 asgiref = [
@@ -416,6 +427,10 @@ distlib = [
 Django = [
     {file = "Django-4.1.1-py3-none-any.whl", hash = "sha256:acb21fac9275f9972d81c7caf5761a89ec3ea25fe74545dd26b8a48cb3a0203e"},
     {file = "Django-4.1.1.tar.gz", hash = "sha256:a153ffd5143bf26a877bfae2f4ec736ebd8924a46600ca089ad96b54a1d4e28e"},
+]
+django-browser-reload = [
+    {file = "django-browser-reload-1.6.0.tar.gz", hash = "sha256:9ca69c71796f53868bdc7421f120d147f7a64faa0d5d8c06970ba3f8061af63c"},
+    {file = "django_browser_reload-1.6.0-py3-none-any.whl", hash = "sha256:31b8b2d51e8faa5878f21e6b60b8f43e1123907c6e082e9e967962ba63958829"},
 ]
 django-editorjs-fields = [
     {file = "django-editorjs-fields-0.2.7.tar.gz", hash = "sha256:f31d8db403c2a0b0e8a24b320c826a76861b92853f8a911695114dc74344e8aa"},
