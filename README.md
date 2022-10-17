@@ -14,6 +14,9 @@ See the ["wiki"](docs/wiki.md) document for additional project information and i
 - [`pyenv`](https://github.com/pyenv/pyenv) - Python version manager
   - Python `3.10.7` installed
 - [Poetry](https://python-poetry.org/) - Python Package and Dependency manager
+- [TailwindCSS](https://tailwindcss.com/docs/installation) [CLI](https://tailwindcss.com/docs/installation) tool.
+  - Available through npm: `npm install -D tailwindcss`
+  - or [Standalone](https://tailwindcss.com/blog/standalone-cli)
 
 \*All remaining project dependencies are managed by Poetry, and are automatically installed through `poetry install`.
 
@@ -26,7 +29,6 @@ $ cd dyablog # Enter project directory.
 $ poetry shell # Open shell in poetry's virtual enviroument.
 $ poetry install # Install python project dependencies.
 $ python ./manage.py collectstatic # populate project static files
-$ tailwind -c ./blog/tailwind.config.js -i ./blog/static/blog/style.css -o ./blog/static/blog/tailwind.css -w # generate tailwind css
-$ python ./manage.py runserver # start the development server
+$ tailwind -i ./blog/static/blog/style.css -o ./blog/static/blog/tailwind.css -w & ./manage.py runserver # start the development server *with* Tailwind CSS
 $ code . # Open project in vscode.
 ```

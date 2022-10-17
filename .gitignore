@@ -163,3 +163,4 @@ cython_debug/
 # "dyablog"-project specific additions:
 static/*
 media/*
+*/tailwind.css
