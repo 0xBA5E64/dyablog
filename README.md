@@ -14,9 +14,9 @@ See the ["wiki"](docs/wiki.md) document for additional project information and i
 - [`pyenv`](https://github.com/pyenv/pyenv) - Python version manager
   - Python `3.10.7` installed
 - [Poetry](https://python-poetry.org/) - Python Package and Dependency manager
-- [TailwindCSS](https://tailwindcss.com/docs/installation) [CLI](https://tailwindcss.com/docs/installation) tool.
+- [TailwindCSS](https://tailwindcss.com/)'s [CLI tool](https://tailwindcss.com/docs/installation).
   - Available through npm: `npm install -D tailwindcss @tailwindcss/typography`
-  - or [Standalone](https://tailwindcss.com/blog/standalone-cli)
+  - -or [Standalone](https://tailwindcss.com/blog/standalone-cli) (with all first-party extensions included)
 
 \*All remaining project dependencies are managed by Poetry, and are automatically installed through `poetry install`.
 
