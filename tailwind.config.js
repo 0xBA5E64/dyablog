@@ -9,6 +9,8 @@ module.exports = {
       'display': ['Inter', 'Roboto', 'Arial']
     },
     transitionProperty: {
+      'all': 'all',
+      'size': 'width, height, padding, margin',
       'movinglabel': 'top, left, right, bottom font-size, font-weight',
     },
     extend: {},
