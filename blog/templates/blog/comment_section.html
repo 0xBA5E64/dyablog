@@ -28,8 +28,9 @@
   {% endif %} {% if comments %} {% for comment in comments %}
   <div class="my-2 rounded bg-slate-200 p-4">
     <p class="mb-2">
-      {% if comment.author.first_name %} {{comment.author.first_name}}
-      {{comment.author.last_name}} {% else %}
+      {% if comment.author.first_name %}
+      <span class="font-bold">{{comment.author.first_name}} {{comment.author.last_name}}</span>
+      {% else %}
       <span
         class="mr-1 rounded bg-gray-800 py-1 px-2 font-mono text-xs font-bold uppercase text-gray-300"
         >{{comment.author.username}}</span
