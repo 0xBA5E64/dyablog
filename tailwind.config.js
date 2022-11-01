@@ -11,6 +11,7 @@ module.exports = {
     transitionProperty: {
       'all': 'all',
       'size': 'width, height, padding, margin',
+      'position': 'top, left, right, bottom, transform',
       'movinglabel': 'top, left, right, bottom font-size, font-weight',
     },
     extend: {},
