@@ -1,9 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 .post-list {
-    position: relative;;
+    position: relative;
 }
 
 .post-entry {
