@@ -3,7 +3,7 @@ name = "dyablog"
 version = "0.1.0"
 description = ""
 authors = [{ name = "0xBA5E64", email = "26796481+0xBA5E64@users.noreply.github.com" }]
-requires-python = "~=3.10.7"
+requires-python = "~=3.13.0"
 readme = "README.md"
 dependencies = [
     "Django>=5.2.6",
