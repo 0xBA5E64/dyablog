@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --font-sans: 'Roboto', 'Arial';
+    --font-serif: 'Roboto Slab', 'Times New Roman';
+    --font-mono: 'Roboto Mono', 'monospace';
+    --font-display: 'Inter', 'Roboto', 'Arial';
+}
 
 .post-list {
     position: relative;
