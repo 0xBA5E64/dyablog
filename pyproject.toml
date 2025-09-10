@@ -6,16 +6,16 @@ authors = [{ name = "0xBA5E64", email = "26796481+0xBA5E64@users.noreply.github.
 requires-python = "~=3.10.7"
 readme = "README.md"
 dependencies = [
-    "Django>=4.1.1,<5",
+    "Django>=5.2.6",
     "django-editorjs-fields>=0.2.7,<0.3"
 ]
 
 [dependency-groups]
 dev = [
-    "pre-commit>=2.20.0,<3",
-    "mypy>=0.982,<0.983",
-    "django-stubs>=1.12.0,<2",
-    "django-browser-reload>=1.6.0,<2",
+    "pre-commit>=4.3.0",
+    "mypy>=1.17.1",
+    "django-stubs>=5.2.2",
+    "django-browser-reload>=1.19.0",
     "ruff>=0.12.7",
 ]
 
