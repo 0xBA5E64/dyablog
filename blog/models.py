@@ -8,9 +8,7 @@ from django_editorjs_fields import EditorJsJSONField
 class BlogPost(models.Model):
     title = models.CharField("Blogpost Title", max_length=80)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    description = models.CharField(
-        "Blogpost Description", max_length=240, blank=True
-    )
+    description = models.CharField("Blogpost Description", max_length=240, blank=True)
     body = EditorJsJSONField(
         plugins=[
             "@editorjs/image",
@@ -33,9 +31,7 @@ class CommentPost(models.Model):
     parent_post = models.ForeignKey(
         BlogPost, on_delete=models.CASCADE, related_name="comments"
     )
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="comments"
-    )
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="comments")
     timestamp = models.DateTimeField("Time of Comment")
     body = models.TextField("Body of Comment", max_length=800)
 

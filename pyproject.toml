@@ -23,6 +23,12 @@ dev = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.ruff]
+exclude = [
+    "migrations",
+    "manage.py"
+]
+
 [tool.mypy]
 follow_imports = "silent"
 strict_optional = true

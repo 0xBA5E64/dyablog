@@ -23,7 +23,7 @@ from django.urls import include, path
 from . import settings
 
 
-def redirect_to_blog(request: HttpRequest) -> (HttpResponseRedirect):
+def redirect_to_blog(request: HttpRequest) -> HttpResponseRedirect:
     return redirect("blog:index", permanent=False)
 
 

@@ -22,16 +22,12 @@ def index(request: HttpRequest) -> HttpResponseBase:
 
 
 def post(request: HttpRequest, blogpost_slug: SafeText) -> HttpResponseBase:
-    if request.method == "POST" and request.user.has_perm(
-        "blog.add_commentpost"
-    ):
+    if request.method == "POST" and request.user.has_perm("blog.add_commentpost"):
         form = CommentForm(request.POST)
         if form.is_valid():
             new_comment = form.save(commit=False)
 
-            new_comment.parent_post = get_object_or_404(
-                BlogPost, slug=blogpost_slug
-            )
+            new_comment.parent_post = get_object_or_404(BlogPost, slug=blogpost_slug)
             new_comment.author = request.user
             new_comment.timestamp = datetime.now()
             new_comment.save()
@@ -52,9 +48,7 @@ def new_post(request: HttpRequest) -> HttpResponseBase:
             slug_suffix = 0
             while BlogPost.objects.filter(slug=potential_slug).count():
                 slug_suffix += 1
-                potential_slug = slugify(
-                    f"{form.cleaned_data['title']} {slug_suffix}"
-                )
+                potential_slug = slugify(f"{form.cleaned_data['title']} {slug_suffix}")
             new_post.slug = potential_slug
             new_post.author = request.user
             new_post.pub_date = datetime.now()
@@ -69,9 +63,7 @@ def new_post(request: HttpRequest) -> HttpResponseBase:
 
 
 @permission_required("blog.change_blogpost")
-def edit_post(
-    request: HttpRequest, blogpost_slug: SafeText
-) -> HttpResponseBase:
+def edit_post(request: HttpRequest, blogpost_slug: SafeText) -> HttpResponseBase:
     selected_post = get_object_or_404(BlogPost, slug=blogpost_slug)
 
     if request.method == "POST":
