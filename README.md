@@ -32,5 +32,5 @@ $ python ./manage.py collectstatic # Populate project static files
 $ python ./manage.py migrate # Generate initial empty database
 $ python ./manage.py createsuperuser # Create an admin account
 $ code . # Open project in vscode.
-$ tailwind -i ./blog/static/blog/style.css -o ./blog/static/blog/tailwind.css -w & ./manage.py runserver # start the development server *with* Tailwind CSS
+$ tailwindcss -i ./blog/static/blog/style.css -o ./blog/static/blog/tailwind.css -w & uv run ./manage.py runserver # start the development server *with* Tailwind CSS
 ```
