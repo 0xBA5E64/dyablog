@@ -1,7 +1,11 @@
+> [!NOTE]
+> This document outlines the initial project setup for a new Python project circa 2021, roughly inspired by [Alex Mitelman](https://twitter.com/alex_mitelman)'s article ["Python Best Practices for a New Project in 2021"](https://mitelman.engineering/blog/python-best-practice/automating-python-best-practices-for-a-new-project/). This does *not* reflect the current recommenations for a new python project, and is kept here for historial purposes.
+
 # Reproducing the base project enviroument
 The following instuctions are to be followed if for whatever reason one wishes to reproduce the initial project enviroument, such as for use as a future template.
 
-> ⚠️ fair **Warning**: This process has only been run on Linux, and, as such, I make no claims this is sure to work on any other platform.
+> [!WARNING]
+> This process has only been run on Linux, and, as such, I make no claims this is sure to work on any other platform.
 
 ## Prerequisites
  - [`git`](https://git-scm.com/) - Version control & project manager
