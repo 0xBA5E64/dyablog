@@ -2,4 +2,9 @@
   "file_types": {
     "Django": ["**/templates/**/*.html"],
   },
+  "languages": {
+    "CSS": {
+      "language_servers": ["tailwindcss-language-server"],
+    },
+  },
 }
