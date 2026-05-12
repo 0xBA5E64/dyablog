@@ -45,7 +45,12 @@ INSTALLED_APPS = [
     "django_editorjs_fields",
     "django_browser_reload",
     "blog.apps.BlogConfig",
+    "django_tailwind_cli",
 ]
+
+# django-tailwind-cli config:
+STATICFILES_DIRS = [BASE_DIR / "assets"]
+TAILWIND_CLI_SRC_CSS = "blog/static/blog/style.css"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

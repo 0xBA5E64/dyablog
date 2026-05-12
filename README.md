@@ -10,7 +10,7 @@ See also the ["wiki"](docs/wiki.md) document for additional project information 
 
 ## Dependencies
 - This project and it's python dependencies are managed through astral.sh's wonderful [`uv`](https://docs.astral.sh/uv/); making Python bearable, nay; *fun* to use since '23
-- Aside from that, [TailwindCSS](https://tailwindcss.com/) is used for template styles, in an exercise of "modern" web-dev practices. Their [CLI tool](https://tailwindcss.com/docs/installation/tailwind-cli) is required to update and maintain key styles by the project, although should not be strictly neccecary if you are only modifying the backend.
+- Aside from that, [TailwindCSS](https://tailwindcss.com/) is used for template styles, in an exercise of "modern" web-dev practices, but should be managed automatically through django-tailwind-cli.
 
 ## Getting Started
 Get uv, then;
@@ -21,5 +21,5 @@ $ uv run ./manage.py collectstatic # Populate project static files
 $ uv run ./manage.py migrate # Generate initial empty database
 $ uv run ./manage.py createsuperuser # Create an admin account
 $ code . # Open project in vscode.
-$ tailwindcss -i blog/static/blog/style.css -o blog/static/blog/tailwind.css -w & uv run ./manage.py runserver # start the development server *with* Tailwind CSS
+$ uv run ./manage.py tailwind runserver # start the development server *with* Tailwind CSS
 ```
